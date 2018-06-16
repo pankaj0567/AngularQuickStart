@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   template: `
       <div>
-        Enter Name <input type="text" [value]='name' (input)='name=$event.target.value' />
+        Enter Name <input type="text" [(ngModel)]='name' />
         Your Name : {{name}}
       </div>  
         `,
