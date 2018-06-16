@@ -12,7 +12,11 @@ var EmployeeComponent = (function () {
         this.lastName = 'kumar';
         this.Age = '21';
         this.Gender = 'Male';
+        this.ShowDetails = false;
     }
+    EmployeeComponent.prototype.ToggleDetails = function () {
+        this.ShowDetails = !this.ShowDetails;
+    };
     return EmployeeComponent;
 }());
 EmployeeComponent = __decorate([
