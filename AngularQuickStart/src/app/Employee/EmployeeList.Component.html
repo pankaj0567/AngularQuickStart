@@ -1,3 +1,4 @@
+<employeeCount></employeeCount>
 
 <table border="1">
     <thead>
@@ -6,24 +7,14 @@
         <th>Employee Gender</th>
         <th>Employee Annual Salary</th>
         <th>Employee Date of Birth</th>
-        <!-- <th>index</th>
-        <th>Is First</th>
-        <th>Is Last</th>
-        <th>Is Even</th>
-        <th>Is Odd</th> -->
     </thead>
     <tbody>
-        <tr *ngFor='let Employee of employees;trackBy:trackByEmployee;let i=index;let isFirst=first;let isLast=last;let isEven=even;let isOdd=odd;'>
+        <tr *ngFor='let Employee of employees;'>
             <td>{{ Employee.code | uppercase }} </td>
                 <td>{{ Employee.name | EmployeeTitle:Employee.gender }}</td>
                 <td>{{ Employee.gender | lowercase }}</td>
                 <td>{{ Employee.annualSalary | currency:'INR':true:'1.3-5' }}</td>
                 <td>{{ Employee.dateOfBirth | date:'dd/MM/y' }}</td>
-                <!-- <td>{{i}}</td>
-                <td>{{ isFirst }}</td>
-                <td>{{ isLast }}</td>
-                <td>{{ isEven }}</td>
-                <td>{{ isOdd }}</td> -->
         </tr>
         <tr *ngIf='!employees || employees.length==0'>
             <td colspan="5">There is no Employee</td>
@@ -31,8 +22,6 @@
     </tbody>
 </table>
 
-<br />
-<br />
-<button (click)='GetEmployees()'>Refresh employee</button>
+
 
 
