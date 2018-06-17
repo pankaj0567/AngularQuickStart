@@ -1,10 +1,15 @@
-import {Component} from '@angular/core';
+import {Component , Input} from '@angular/core';
 @Component({
     selector : '<employeeCount></employeeCount>',
     templateUrl: './EmployeeCount.Component.html'
 })
 export class EmployeeCountComponent {
-    All:number=10;
-    Male:number=5;
-    Female:number=3;
+    @Input()
+    All:number;
+
+    @Input()
+    Male:number;
+
+    @Input()
+    Female:number;
 }
