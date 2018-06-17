@@ -1,11 +1,13 @@
-import {Component} from '@angular/core'
+import {Component} from '@angular/core';
+import { IEmployee } from './Employee';
+
 
 @Component({
     selector:'<EmployeeList></EmployeeList>',
     templateUrl:'./EmployeeList.Component.html'
 })
 export class EmployeeListComponent{
-    employees: any[];
+    employees: IEmployee[];
     constructor()
     {
        this.employees= [
