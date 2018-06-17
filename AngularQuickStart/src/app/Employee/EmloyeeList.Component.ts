@@ -48,5 +48,10 @@ export class EmployeeListComponent{
         return this.employees.filter(emp=>emp.gender==='Female').length;
     }
 
+    RadioButtonSelection:string='All';
+
+    onRadioButtonSelectionChanged(value:string){
+            this.RadioButtonSelection=value;
+    }
 }
 
