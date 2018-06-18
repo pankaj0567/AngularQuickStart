@@ -3,8 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'my-app',
   template: `
-              Enter Name : <input type="text" [(ngModel)]='name' /><br/>
-              <simple [Name]='name'></simple>
+  <EmployeeList></EmployeeList>
         `,
 })
 export class AppComponent  { 
