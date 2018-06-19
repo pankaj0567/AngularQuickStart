@@ -1,4 +1,4 @@
-<employeeCount [All]='GetAllEmployee()' [Male]='GetAllMaleEmployee()' [Female]='GetAllFemaleEmployee()' (OnRadioButtonSelectionChanged)='onRadioButtonSelectionChanged($event)'>  
+<employeeCount *ngIf="employees" [All]='GetAllEmployee()' [Male]='GetAllMaleEmployee()' [Female]='GetAllFemaleEmployee()' (OnRadioButtonSelectionChanged)='onRadioButtonSelectionChanged($event)'>  
 </employeeCount>
 
 <table border="1">
@@ -19,7 +19,10 @@
                 <td>{{ Employee.dateOfBirth | date:'dd/MM/y' }}</td>
         </tr>
     </ng-container>
-        <tr *ngIf='!employees || employees.length==0'>
+        <tr *ngIf="!employees">
+            <td colspan="5">Loading Employee....Please Wait.</td>
+        </tr>
+        <tr *ngIf='!employees && employees.length==0'>
             <td colspan="5">There is no Employee</td>
         </tr>
     </tbody>
