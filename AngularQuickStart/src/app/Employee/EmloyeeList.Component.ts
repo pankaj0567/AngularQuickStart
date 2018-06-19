@@ -10,13 +10,19 @@ import { EmployeeService } from './Employee.Service';
 })
 export class EmployeeListComponent implements OnInit{
     employees: IEmployee[];
+    statusMessage: string ="Loading Employee....Please Wait.";
     constructor(private _GetEmployeeFromService : EmployeeService)
     {
 
     }
 
     ngOnInit() {
-         this._GetEmployeeFromService.GetAllEmployee().subscribe((EmployeeDate) => this.employees = EmployeeDate);
+        this._GetEmployeeFromService.GetAllEmployee().subscribe(
+            (EmployeeDate) => this.employees = EmployeeDate,
+            (error) => {
+                this.statusMessage = "There is an error in service. Please try again after some time.";
+                console.error(error);
+            });
     }
     GetAllEmployee():number
     {
