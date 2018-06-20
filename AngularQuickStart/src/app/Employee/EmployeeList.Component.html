@@ -12,7 +12,11 @@
     <tbody>
         <ng-container *ngFor='let Employee of employees;'>
         <tr *ngIf='RadioButtonSelection=="All" || RadioButtonSelection==Employee.gender '>
-            <td>{{ Employee.code | uppercase }} </td>
+            <td>
+                <a [routerLink]="['/employees',Employee.code]">
+                    {{ Employee.code | uppercase }}
+                </a>
+                    </td>
                 <td>{{ Employee.name | EmployeeTitle:Employee.gender }}</td>
                 <td>{{ Employee.gender | lowercase }}</td>
                 <td>{{ Employee.annualSalary | currency:'INR':true:'1.3-5' }}</td>

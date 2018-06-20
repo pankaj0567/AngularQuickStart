@@ -1,22 +1,29 @@
+
+<div *ngIf="employee">
     <table border="1">
         <tr>
             <td>First Name</td>
-            <td>{{firstName}}</td>
+            <td>{{employee.code}}</td>
         </tr>
         <tr>
             <td>Last Name</td>
-            <td>{{lastName}}</td>
+            <td>{{employee.name}}</td>
         </tr>
-        <tr *ngIf="ShowDetails">
+        <tr>
             <td>Gender</td>
-            <td>{{Gender}}</td>
+            <td>{{employee.gender}}</td>
         </tr>
-        <tr *ngIf="ShowDetails">
-            <td>Age</td>
-            <td>{{Age}}</td>
+        <tr>
+            <td>annualSalary</td>
+            <td>{{employee.annualSalary}}</td>
+        </tr>
+        <tr>
+            <td>dateOfBirth</td>
+            <td>{{employee.dateOfBirth}}</td>
         </tr>
     </table>
-<button (click)="ToggleDetails()">
-    {{ShowDetails?'Show':'HIde'}} Details
-</button>
+</div>
 
+<div *ngIf="!employee">
+    There  is no employee.
+</div>

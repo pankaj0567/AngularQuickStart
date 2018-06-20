@@ -16,7 +16,8 @@ import { PageNotFoundComponent } from './Others/PageNotFound.Component';
 
 const AllRoute:Routes=[
   {path : 'home' , component : HomeComponent },
-  { path : 'employees', component : EmployeeListComponent},
+    { path: 'employees', component: EmployeeListComponent },
+    { path: 'employees/:code', component: EmployeeComponent },
   { path : '', redirectTo : '/home' , pathMatch:'full' },
   { path : '**' , component : PageNotFoundComponent  }
 ];

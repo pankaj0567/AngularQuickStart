@@ -15,6 +15,12 @@ export class EmployeeService {
             .map((response: Response) => <IEmployee[]>response.json())
             .catch(this.HandleError);
     }
+    GetEmployeeById(code: string): Observable<IEmployee> {
+        return this._http.get("http://localhost:12268/api/Employees/" + code)
+            .map((response: Response) => <IEmployee>response.json())
+            .catch(this.HandleError);
+    }
+
     HandleError(error: Response) {
         console.error(error);
         return Observable.throw(error);
