@@ -20,12 +20,13 @@ export class EmployeeComponent implements OnInit {
 
     ngOnInit() {
         let EmployeeCode: string = this._activateRoute.snapshot.params['code'];
-        this._employeeService.GetEmployeeById(EmployeeCode).subscribe(
+        this._employeeService.GetEmployeeById(EmployeeCode).then(
             (EmployeeFirstOrDefault) => this.employee = EmployeeFirstOrDefault,
-                (error)=> {
-                console.error(error);
-            }
-        );
+                
+            
+        ).catch((error)=> {
+            console.error(error)
+        });
     }
     BackToEmployeeList():void{
         this._router.navigate(['/employees']);
