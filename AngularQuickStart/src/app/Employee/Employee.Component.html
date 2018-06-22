@@ -25,10 +25,15 @@
 </div>
 
 <div *ngIf="!employee">
-    There  is no employee.
+    {{statusMessage}}
 </div>
 
 <br />
 <div>
     <button type="button" (click)='BackToEmployeeList()'>Back To Employee List</button>
+</div>
+
+<br />
+<div *ngIf="!subscrition.closed">
+    <button type="button" (click)='CancelledRequest()'>Cancelled request</button>
 </div>

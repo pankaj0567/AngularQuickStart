@@ -16,11 +16,10 @@ export class EmployeeService {
             .map((response: Response) => <IEmployee[]>response.json())
             .catch(this.HandleError);
     }
-    GetEmployeeById(code: string): Promise<IEmployee> {
+    GetEmployeeById(code: string): Observable<IEmployee> {
         return this._http.get("http://localhost:12268/api/Employees/" + code)
-            .map((response: Response) => <IEmployee>response.json())
-            .toPromise()
-            .catch(this.HandlePromiseError);
+            .map((response: Response) => <IEmployee>response.json())            
+            .catch(this.HandleError);
     }
 
     HandlePromiseError(error: Response) {
