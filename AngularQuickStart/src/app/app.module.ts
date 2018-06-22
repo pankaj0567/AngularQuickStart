@@ -13,7 +13,7 @@ import { SimpleComponent} from './Others/Simple.Component';
 import { HomeComponent } from './Home/Home.Component';
 import { PageNotFoundComponent } from './Others/PageNotFound.Component';
 
-
+//Done Angular 2 date : 22/06/2018
 const AllRoute:Routes=[
   {path : 'home' , component : HomeComponent },
     { path: 'employees', component: EmployeeListComponent },
